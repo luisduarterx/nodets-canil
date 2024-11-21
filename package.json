@@ -2,8 +2,13 @@
   "name": "canil",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
-    "dev": "nodemon -e ts,json,mustache src/server.ts"
+    "dev": "nodemon -e ts,json,mustache src/server.ts",
+    "start": "node dist/server.js",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/"
   },
   "author": "",
   "license": "ISC",
